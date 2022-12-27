@@ -10,7 +10,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body class="h-full">
+  <body class="h-full"
+        data-controller="clipboard"
+        data-action="keydown.meta+v->clipboard#addClip">
     <%= render 'layouts/shell'%>
   </body>
 </html>
