@@ -1,0 +1,15 @@
+<li class="relative">
+  <% if clip.url.nil? %>
+  <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+    <%= image_tag("url-icon.svg", size: "35x35", class:"ml-2") %>  </div>
+  <%  else  %>
+    <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+      <%=  link_to clip.url , target: "_blank" do  %>
+        <%=  image_tag clip.url, class: "pointer-events-none object-cover group-hover:opacity-75"  %>
+      <%  end  %>
+    </div>
+    <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900">Added <%= clip.created_at.strftime('%b %d %Y') %></p>
+  <%  end %>
+  <!--  <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900"></p>-->
+  <p class="pointer-events-none block text-sm font-medium text-gray-500">Expires <%= clip.expires.strftime('%b %d %Y') %></p>
+</li>
