@@ -1,8 +1,10 @@
 <%= content_for :header do %>
   <div class="mx-auto max-w-7xl py-3 px-4 sm:px-6 lg:px-8 flex justify-around">
     <div class="text-lg font-bold tracking-tight text-gray-900 flex">
-      <p class="mt-1">Add clip</p>
-      <%= image_tag("add-icon.svg", size: "35x35", class:"ml-2") %>
+      <button data-controller="clipboard" class="flex" data-action="click->clipboard#paste">
+        <p class="mt-1">Add clip</p>
+        <%= image_tag("add-icon.svg", size: "35x35", class:"ml-2") %>
+      </button>
     </div>
     <div class="text-lg font-bold tracking-tight text-gray-900 flex">
       <p class="mt-1">Delete clip</p>
@@ -11,8 +13,10 @@
   </div>
 <% end %>
 
-<!-- for each -->
+
+<%= render 'pages/add_clip' %>
+
 <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
   <%= render @clips %>
 </ul>
-<!-- end for each -->
+
