@@ -46,6 +46,10 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_27_040953) do
     t.string "url"
     t.string "filename"
     t.string "type"
+    t.string "name"
+    t.text "description"
+    t.text "og_images", default: [], array: true
+    t.string "og_title"
     t.datetime "expires", precision: nil
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

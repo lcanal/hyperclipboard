@@ -74,3 +74,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+gem "opengraph_parser", "~> 0.2.5"

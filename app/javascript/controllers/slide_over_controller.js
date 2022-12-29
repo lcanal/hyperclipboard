@@ -3,7 +3,7 @@ import {enter, leave} from "el-transition";
 
 // Connects to data-controller="slide-over"
 export default class extends Controller {
-  static targets = ["panel", "container", "preview", "description", "name"];
+  static targets = ["panel", "container", "preview", "description", "name", "url"];
 
   async show({ detail:  { content }}) {
 
@@ -21,7 +21,12 @@ export default class extends Controller {
         }
         else if (type.includes('text/plain')){
           const blob = await clipboardItem.getType(type);
-          this.descriptionTarget.value = await new Response(blob).text();
+          const text = await new Response(blob).text();
+
+          if (text.includes('https://') || text.includes('http://'))
+            this.urlTarget.value = text
+          else
+            this.descriptionTarget.value = text;
         }
       }
     }
