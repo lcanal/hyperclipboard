@@ -76,3 +76,7 @@ group :test do
 end
 
 gem "opengraph_parser", "~> 0.2.5"
+gem "poppler"
+gem "ruby-vips", "~> 2.1"
+
+gem "image_processing", "~> 1.12"

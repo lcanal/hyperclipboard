@@ -3,16 +3,15 @@ import {enter, leave} from "el-transition";
 
 // Connects to data-controller="slide-over"
 export default class extends Controller {
-  static targets = ["panel", "container", "preview", "description", "name", "url"];
+  static targets = ["panel", "backdrop", "container", "preview", "description", "name", "url"];
 
   async show({ detail:  { content }}) {
-
-    // enter(this.backdropTarget);
-    // enter(this.closeButtonTarget);
     this.containerTarget.classList.remove("hidden");
-    enter(this.panelTarget);
-    this.nameTarget.focus();
 
+    enter(this.panelTarget);
+    enter(this.backdropTarget);
+
+    this.nameTarget.focus();
     for (const clipboardItem of content[0]) {
       for (const type of clipboardItem.types) {
         if (type.includes('image/')) {
@@ -34,7 +33,7 @@ export default class extends Controller {
 
   hide(){
     Promise.all([
-      // leave(this.backdropTarget),
+      leave(this.backdropTarget),
       // leave(this.containerTarget),
       leave(this.panelTarget),
     ]).then(() => {

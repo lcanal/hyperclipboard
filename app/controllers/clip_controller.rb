@@ -28,6 +28,6 @@ class ClipController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def clip_params
-    params.permit(:name, :description, :filename, :url, :type, :preview)
+    params.permit(:name, :description, :filename, :url, :type, :image)
   end
 end

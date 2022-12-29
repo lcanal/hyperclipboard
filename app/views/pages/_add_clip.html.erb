@@ -6,7 +6,16 @@
 
   <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
     <!-- Background backdrop, show/hide based on slide-over state. -->
-    <div class="fixed inset-0"></div>
+
+    <div
+          data-slide-over-target="backdrop"
+          data-transition-enter="ease-in-out duration-500"
+          data-transition-enter-start="opacity-0"
+          data-transition-enter-end="opacity-100"
+          data-transition-leave="ease-in-out duration-500"
+          data-transition-leave-start="opacity-100"
+          data-transition-leave-end="opacity-0"
+          class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
 
     <div class="fixed inset-0 overflow-hidden">
       <div class="absolute inset-0 overflow-hidden">

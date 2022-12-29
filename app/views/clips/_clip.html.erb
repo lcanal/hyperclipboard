@@ -1,25 +1,13 @@
 <li class="relative">
-  <% if clip.display_image.nil? %>
-      <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-        <% if clip.url.nil? %>
-          <%= image_tag "url-icon.svg", size: "35x35", class:"ml-2" %>
-        <% else %>
-          <%= link_to clip.url , target: "_blank", class: "" do   %>
-            <%= image_tag "url-icon.svg", class:"h-full" %>
-          <% end   %>
-        <%  end %>
-      </div>
-  <% else  %>
-    <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
-      <% if clip.url.nil? %>
-        <%= image_tag clip.display_image, class: "pointer-events-none object-cover group-hover:opacity-75"   %>
+  <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
+    <%= link_to clip.image_link, target: "_blank", class: "flex justify-center align-middle p-1" do %>
+      <% if clip.image_tag.nil? %>
+        <%= image_tag "url-icon.svg", class:"h-full" %>
       <% else %>
-        <%= link_to clip.url , target: "_blank", class: "flex justify-center align-middle p-10" do   %>
-            <%= image_tag clip.display_image, class: "pointer-events-none object-cover group-hover:opacity-75"  %>
-        <%   end   %>
-      <%  end %>
-    </div>
-  <% end %>
-    <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900"><%= clip.name %></p>
+        <%= image_tag clip.image_tag, class: "pointer-events-none object-cover group-hover:opacity-75"%>
+      <% end %>
+    <% end %>
+  </div>
+  <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900"><%= clip.name %></p>
   <p class="pointer-events-none block text-sm font-medium text-gray-500">Expires <%= clip.expires.strftime('%b %d %Y') %></p>
-</li>`
+</li>
