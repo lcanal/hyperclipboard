@@ -290,6 +290,7 @@ DEPENDENCIES
   capybara
   cssbundling-rails
   debug
+  gobject-introspection (~> 4.0)
   image_processing (~> 1.12)
   jbuilder
   jsbundling-rails
