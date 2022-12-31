@@ -15,4 +15,10 @@ class Clip < ApplicationRecord
     return image.representation(resize_to_limit: [400, 400]) if image.attached?
     display_image
   end
+
+  def self.expire_clips
+    clips = Clip.where('expires < ?', Time.now)
+    puts "Found #{clips.length} number of clips to expire"
+    clips.destroy_all unless clips.length <= 0
+  end
 end

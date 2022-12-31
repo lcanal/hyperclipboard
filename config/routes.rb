@@ -1,5 +1,8 @@
+require 'sidekiq/web'
+require 'sidekiq-scheduler/web'
+
 Rails.application.routes.draw do
-  # post 'clips/save', to: 'clips#create'
+  mount Sidekiq::Web => '/sidekiq'
 
   resources :clips
   post 'clips/delete', to: 'clips#delete'
