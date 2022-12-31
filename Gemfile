@@ -83,3 +83,5 @@ gem "image_processing", "~> 1.12"
 gem "sidekiq"
 gem "sidekiq-scheduler"
 gem "gobject-introspection", "~> 4.0"
+
+gem "rsvg2", "~> 4.0"
