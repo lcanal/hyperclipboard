@@ -76,12 +76,12 @@ group :test do
 end
 
 gem "opengraph_parser", "~> 0.2.5"
-gem "poppler"
 gem "ruby-vips", "~> 2.1"
 gem "image_processing", "~> 1.12"
 
 gem "sidekiq"
 gem "sidekiq-scheduler"
-gem "gobject-introspection", "~> 4.0"
 
-gem "rsvg2", "~> 4.0"
+gem "gobject-introspection", "~> 3.5.1"
+
+gem "poppler", "> 3", "< 4"
