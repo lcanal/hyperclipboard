@@ -1,4 +1,11 @@
-class ClipController < ApplicationController
+class ClipsController < ApplicationController
+  def index
+    @clips = Clip.all
+  end
+
+  def show
+    @clip = Clip.find(params[:id])
+  end
   def create
     @clip = Clip.new(clip_params)
     @clip.expires = Time.new + 7.days
@@ -18,6 +25,11 @@ class ClipController < ApplicationController
         format.json { render json: @clip.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def delete
+    clips = params
+    puts clips
   end
 
   private

@@ -8,6 +8,11 @@
       <% end %>
     <% end %>
   </div>
-  <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900"><%= clip.name %></p>
-  <p class="pointer-events-none block text-sm font-medium text-gray-500">Expires <%= clip.expires.strftime('%b %d %Y') %></p>
+  <div>
+    <%= link_to clip, class: "p-0" do %>
+      <%#= image_tag "edit-icon.svg", size: "20x20" , class: "h-full" %>
+      <p class="pointer-events-none mt-2 block truncate text-sm font-medium text-gray-900"><%= clip.name %></p>
+      <p class="pointer-events-none text-sm font-medium text-gray-500">Expires <%= clip.expires.strftime('%b %d %Y') %></p>
+    <% end %>
+  </div>
 </li>

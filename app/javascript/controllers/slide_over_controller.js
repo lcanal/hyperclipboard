@@ -17,6 +17,7 @@ export default class extends Controller {
         if (type.includes('image/')) {
           const blob = await clipboardItem.getType(type);
           this.previewTarget.src = URL.createObjectURL(blob);
+          this.previewTarget.attachment = URL.createObjectURL(blob);
         }
         else if (type.includes('text/plain')){
           const blob = await clipboardItem.getType(type);

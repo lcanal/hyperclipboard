@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 class PagesController < ApplicationController
-  def home
+  def delete
     @clips = Clip.all
   end
 end
