@@ -24,10 +24,14 @@
         <dd class="mt-1 text-sm text-gray-900"><%= @clip.created_at.strftime('%b %d %Y - %H:%M:%S (%Z)') %></dd>
       </div>
       <div class="sm:col-span-2">
-        <dt class="text-sm font-medium text-gray-500">Image</dt>
+        <dt class="text-sm font-medium text-gray-500">Preview</dt>
         <dd class="mt-1 text-sm text-gray-900 justify-center">
           <div class="flex justify-center">
-            <%= image_tag @clip.image_tag, class: "h-full" %>
+            <% if @clip.image_tag.nil? %>
+              <%= image_tag "url-icon.svg", size: "200x200" %>
+            <% else %>
+              <%= image_tag @clip.image_tag, class: "h-full" %>
+            <% end %>
           </div>
         </dd>
       </div>
