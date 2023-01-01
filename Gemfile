@@ -81,3 +81,4 @@ gem "sidekiq", "~> 6.5"
 gem "sidekiq-scheduler"
 
 gem "mini_magick", "~> 4.12"
+gem 'image_processing', '~> 1.2'
