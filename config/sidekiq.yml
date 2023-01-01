@@ -8,6 +8,6 @@
 
 :schedule:
   ArchiveClipsJob:
-    cron: '*/90 * * * *'
+    cron: "*/90 * * * *"
     queue: default
     enabled: true

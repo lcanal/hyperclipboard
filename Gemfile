@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.3"
+ruby "3.1.3"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.4"
@@ -80,5 +80,5 @@ gem "ruby-vips", "~> 2.1"
 gem "image_processing", "~> 1.12"
 gem "poppler", "~> 3.4.9"
 
-gem "sidekiq"
+gem "sidekiq", "~> 6.5"
 gem "sidekiq-scheduler"
