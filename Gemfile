@@ -78,7 +78,6 @@ end
 gem "opengraph_parser", "~> 0.2.5"
 gem "ruby-vips", "~> 2.1"
 gem "image_processing", "~> 1.12"
-gem "poppler", "~> 3.4.9"
 
 gem "sidekiq", "~> 6.5"
 gem "sidekiq-scheduler"
