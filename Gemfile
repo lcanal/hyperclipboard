@@ -76,8 +76,8 @@ group :test do
 end
 
 gem "opengraph_parser", "~> 0.2.5"
-gem "ruby-vips", "~> 2.1"
-gem "image_processing", "~> 1.12"
 
 gem "sidekiq", "~> 6.5"
 gem "sidekiq-scheduler"
+
+gem "mini_magick", "~> 4.12"
