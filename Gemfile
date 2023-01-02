@@ -80,5 +80,5 @@ gem "opengraph_parser", "~> 0.2.5"
 gem "sidekiq", "~> 6.5"
 gem "sidekiq-scheduler"
 
-gem "mini_magick", "~> 4.12"
-gem 'image_processing', '~> 1.2'
+gem "image_processing", "~> 1.12"
+

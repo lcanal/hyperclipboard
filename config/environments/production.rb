@@ -90,4 +90,9 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  # Needed due to lack of VIPS library in Digital Ocean heroku image 22. Maybe avail in 24
+  # https://github.com/libvips/ruby-vips/issues/219
+  config.active_storage.variant_processor = :image_magick
+
 end
