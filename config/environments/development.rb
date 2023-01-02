@@ -70,5 +70,5 @@ Rails.application.configure do
 
   # config.assets.debug = true
 
-  config.active_storage.variant_processor = :image_magick
+  config.active_storage.variant_processor = :mini_magick
 end
