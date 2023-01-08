@@ -11,7 +11,7 @@ export default class extends Controller {
         this.element.disabled = false;
         break;
       case "safari-iphone":
-        this.element.innerHTML = "Hold to paste"
+        this.element.innerHTML = "Tap to paste"
         // this.element.classList.add("btn-primary");
         this.element.disabled = false;
         break;
