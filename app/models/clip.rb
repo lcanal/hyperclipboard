@@ -2,7 +2,7 @@ class Clip < ApplicationRecord
   has_one_attached :image, dependent: :destroy!
 
   def display_image
-    return image if image.attached?
+    return image if image.attached? && image.representable?
     og_images[0] unless og_images.empty?
   end
 
@@ -12,7 +12,7 @@ class Clip < ApplicationRecord
   end
 
   def image_tag
-    return image.representation(resize_to_limit: [1000, 1000]) if image.attached?
+    return image.representation(resize_to_limit: [1000, 1000]) if image.attached? && image.representable?
     display_image
   end
 
