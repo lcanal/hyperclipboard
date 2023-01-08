@@ -4,8 +4,8 @@
       <input type="email" name="email" id="email" class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Future search feature">
     </div>
     <div class="text-sm font-bold tracking-tight text-gray-900">
-      <button data-controller="clipboard" data-action="click->clipboard#paste" class="btn-primary">
-        <p>Add clip</p>
+      <button data-controller="clipboard" data-action="clipboard#paste" disabled>
+        <p class="flex"><%= image_tag "copy-icon.svg", size: "20x20", class: "mx-2" %> ⌘ + V to paste a clip</p>
       </button>
     </div>
   </div>
@@ -23,15 +23,16 @@
         <%= image_tag "empty_clips.svg" , class: "mb-4 lg:w-1/4 ml-10" %>
         <div class="flex-1 text-center">
           <p class="mb-4 text-3xl font-bold">Add a new clip from clipboard</p>
-          <button data-controller="clipboard" data-action="click->clipboard#paste" class="btn-primary-lg">
+          <button data-controller="clipboard" data-action="clipboard#paste" class="btn-primary-lg">
             <p>Add clip</p>
           </button>
         </div>
       </div>
     </div>
 <% else %>
+  <div class="text-sm font-bold tracking-tight text-gray-900">
+  </div>
   <ul role="list" class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-3 xl:gap-x-8">
     <%= render @clips %>
   </ul>
 <% end %>
-

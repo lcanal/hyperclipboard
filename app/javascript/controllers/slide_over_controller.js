@@ -4,15 +4,25 @@ import {enter, leave} from "el-transition";
 // Connects to data-controller="slide-over"
 export default class extends Controller {
   static targets = ["panel", "backdrop", "container", "preview", "description", "name", "url"];
+  initialize() {
+    this.boundHandleShowEvent = this.show.bind(this);
+  }
+  connect() {
+    addEventListener("paste", this.boundHandleShowEvent)
+  }
 
-  async show({ detail:  { content }}) {
+  past(){
+    this.show();
+  }
+  async show() {
+    let items = await navigator.clipboard.read();
     this.containerTarget.classList.remove("hidden");
 
     enter(this.panelTarget);
     enter(this.backdropTarget);
 
     this.nameTarget.focus();
-    for (const clipboardItem of content[0]) {
+    for (const clipboardItem of items) {
       for (const type of clipboardItem.types) {
         if (type.includes('image/')) {
           const blob = await clipboardItem.getType(type);
