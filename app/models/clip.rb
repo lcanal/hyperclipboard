@@ -1,5 +1,5 @@
 class Clip < ApplicationRecord
-  has_one_attached :image, dependent: :destroy
+  has_one_attached :image, dependent: :destroy!
 
   def display_image
     return image if image.attached?

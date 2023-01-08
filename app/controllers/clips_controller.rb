@@ -34,6 +34,7 @@ class ClipsController < ApplicationController
 
   def destroy
     @clip = Clip.find(params[:id])
+    @clip.image.purge
     @clip.destroy
 
     respond_to do |format|

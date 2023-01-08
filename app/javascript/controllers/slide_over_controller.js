@@ -14,6 +14,7 @@ export default class extends Controller {
   past(){
     this.show();
   }
+
   async show() {
     let items = await navigator.clipboard.read();
     this.containerTarget.classList.remove("hidden");
@@ -27,7 +28,12 @@ export default class extends Controller {
         if (type.includes('image/')) {
           const blob = await clipboardItem.getType(type);
           this.previewTarget.src = URL.createObjectURL(blob);
-          this.previewTarget.attachment = URL.createObjectURL(blob);
+
+
+          let list = new DataTransfer();
+          let file = new File([blob], new Date().toISOString());
+          list.items.add(file);
+          this.previewTarget.files = list.files;
         }
         else if (type.includes('text/plain')){
           const blob = await clipboardItem.getType(type);
