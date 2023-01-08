@@ -2,9 +2,9 @@
   <div class="group aspect-w-10 aspect-h-7 block w-full overflow-hidden rounded-lg bg-gray-100 focus-within:ring-2 focus-within:ring-indigo-500 focus-within:ring-offset-2 focus-within:ring-offset-gray-100">
     <%= link_to clip.image_link, target: "_blank", class: "flex justify-center align-middle p-1" do %>
       <% if clip.image_tag.nil? %>
-        <%= image_tag "url-icon.svg", class:"h-full" %>
+        <%= image_tag "url-icon.svg", class:"h-full rounded-lg" %>
       <% else %>
-        <%= image_tag clip.image_tag, class: "pointer-events-none object-cover w-full group-hover:opacity-75"%>
+        <%= image_tag clip.image_tag, class: "pointer-events-none object-cover w-full group-hover:opacity-75 rounded-lg"%>
       <% end %>
     <% end %>
   </div>

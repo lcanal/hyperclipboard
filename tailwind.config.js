@@ -1,4 +1,13 @@
 module.exports = {
+  theme: {
+    extend: {
+      colors: {
+        blue: {
+          1500: '#9abdd8',
+        },
+      }
+    }
+  },
   content: [
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',

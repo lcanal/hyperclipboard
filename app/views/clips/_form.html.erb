@@ -1,12 +1,13 @@
 <%= form_with model: @clip, class: "flex h-full flex-col divide-y divide-gray-200 bg-white shadow-xl" do |form| %>
   <div class="h-0 flex-1 overflow-y-auto">
-    <div class="bg-indigo-700 py-6 px-4 sm:px-6">
+    <div class="py-6 px-4 sm:px-6" style="background-color: #9abdd8">
       <div class="flex items-center justify-between">
         <h2 class="text-lg font-medium text-white" id="slide-over-title">Paste</h2>
         <div class="ml-3 flex h-7 items-center">
           <button type="button"
                   data-action="click->slide-over#hide"
-                  class="rounded-md bg-indigo-700 text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
+                  style="background-color: #9abdd8"
+                  class="rounded-md text-indigo-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white">
             <span class="sr-only">Close panel</span>
             <!-- Heroicon name: outline/x-mark -->
             <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -41,33 +42,13 @@
             </div>
           </div>
           <div>
-            <label for="clip" class="block text-sm font-medium text-gray-900">Preview</label>
-            <div class="mt-1 flex justify-center">
-              <%= form.file_field :image, data: { slide_over_target: 'preview'}%>
+            <label for="image" class="block text-sm font-medium text-gray-900">File</label>
+            <div class="mt-1">
+              <%= form.file_field :image, data: { slide_over_target: 'preview'}, class: 'form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none' %>
             </div>
           </div>
         </div>
-        <div class="pt-4 pb-6">
-          <div class="flex text-sm">
-            <a href="#" class="group inline-flex items-center font-medium text-indigo-600 hover:text-indigo-900">
-              <!-- Heroicon name: mini/link -->
-              <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-900" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path d="M12.232 4.232a2.5 2.5 0 013.536 3.536l-1.225 1.224a.75.75 0 001.061 1.06l1.224-1.224a4 4 0 00-5.656-5.656l-3 3a4 4 0 00.225 5.865.75.75 0 00.977-1.138 2.5 2.5 0 01-.142-3.667l3-3z" />
-                <path d="M11.603 7.963a.75.75 0 00-.977 1.138 2.5 2.5 0 01.142 3.667l-3 3a2.5 2.5 0 01-3.536-3.536l1.225-1.224a.75.75 0 00-1.061-1.06l-1.224 1.224a4 4 0 105.656 5.656l3-3a4 4 0 00-.225-5.865z" />
-              </svg>
-              <span class="ml-2">Copy link</span>
-            </a>
-          </div>
-          <div class="mt-4 flex text-sm">
-            <a href="#" class="group inline-flex items-center text-gray-500 hover:text-gray-900">
-              <!-- Heroicon name: mini/question-mark-circle -->
-              <svg class="h-5 w-5 text-gray-400 group-hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.061-1.061 3 3 0 112.871 5.026v.345a.75.75 0 01-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 108.94 6.94zM10 15a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
-              </svg>
-              <span class="ml-2">Learn more about sharing</span>
-            </a>
-          </div>
-        </div>
+
       </div>
     </div>
   </div>
@@ -75,7 +56,7 @@
     <button type="button"
             data-action="click->slide-over#hide"
             class="rounded-md border border-gray-300 bg-white py-2 px-4 text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Cancel</button>
-    <%= form.submit "Save", class: "ml-4 inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+    <%= form.submit "Save", class: "btn-primary ml-4" %>
   </div>
 </form>
 <% end %>
