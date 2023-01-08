@@ -1,7 +1,7 @@
 <div class="min-h-full">
-  <nav class="bg-gray-800">
+  <nav class="bg-white border-b border-gray-200">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="flex h-16 items-center justify-between">
+      <div class="flex h-12 items-center justify-between">
         <div class="flex items-center">
           <div class="flex-shrink-0">
             <%= image_tag "delete-icon.svg", class: "h-8 w-8" %>
@@ -121,8 +121,8 @@
     </div>
   </nav>
 
-  <header class="bg-white shadow">
-  <%= yield :header %>
+  <header class="bg-white shadow h-10">
+    <%= yield :header %>
   </header>
   <main>
     <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">

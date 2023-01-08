@@ -1,9 +1,9 @@
 <%= content_for :header do %>
-  <div class="mx-auto max-w-7xl py-3 px-4 sm:px-6 lg:px-8 flex justify-end">
-    <div class="text-lg font-bold tracking-tight text-gray-900 flex">
-      <button data-controller="clipboard" class="flex" data-action="click->clipboard#paste">
-        <p class="mt-1">Add clip</p>
-        <%= image_tag "add-icon.svg", size: "35x35", class:"ml-2" %>
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex justify-end items-center h-full">
+    <div class="text-sm font-bold tracking-tight text-gray-900">
+      <button data-controller="clipboard" data-action="click->clipboard#paste" class="flex items-center">
+          <p>Add clip</p>
+        <%= image_tag "add-icon.svg", size: "25x25", class:"ml-2" %>
       </button>
     </div>
   </div>

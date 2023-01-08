@@ -81,4 +81,3 @@ gem "sidekiq", "~> 6.5"
 gem "sidekiq-scheduler"
 
 gem "image_processing", "~> 1.12"
-
