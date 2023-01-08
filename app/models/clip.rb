@@ -12,7 +12,7 @@ class Clip < ApplicationRecord
   end
 
   def image_tag
-    return image.representation(resize_to_limit: [400, 400]) if image.attached?
+    return image.representation(resize_to_limit: [1000, 1000]) if image.attached?
     display_image
   end
 
