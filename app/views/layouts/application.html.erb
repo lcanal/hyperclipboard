@@ -11,7 +11,16 @@
   </head>
 
   <body class="h-full">
-    <%= render 'layouts/shell'%>
+  <div>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+
+    <% unless current_user.nil? %>
+      <%= render 'layouts/shell'%>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
 
