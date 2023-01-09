@@ -1,18 +1,18 @@
 class Clip < ApplicationRecord
-  has_one_attached :image, dependent: :destroy!
+  has_one_attached :file, dependent: :destroy!
 
   def display_image
-    return image if image.attached? && image.representable?
+    return file if file.attached? && file.representable?
     og_images[0] unless og_images.empty?
   end
 
   def image_link
-    return image if image.attached?
+    return file if file.attached?
     url
   end
 
   def image_tag
-    return image.representation(resize_to_limit: [1000, 1000]) if image.attached? && image.representable?
+    return file.representation(resize_to_limit: [1000, 1000]) if file.attached? && file.representable?
     display_image
   end
 

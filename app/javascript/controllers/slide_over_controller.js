@@ -3,7 +3,7 @@ import {enter, leave} from "el-transition";
 
 // Connects to data-controller="slide-over"
 export default class extends Controller {
-  static targets = ["panel", "backdrop", "container", "preview", "description", "name", "url"];
+  static targets = ["panel", "backdrop", "container", "file", "description", "name", "url", "preview"];
   initialize() {
     this.boundHandleShowEvent = this.show.bind(this);
   }
@@ -27,13 +27,12 @@ export default class extends Controller {
       for (const type of clipboardItem.types) {
         if (type.includes('image/')) {
           const blob = await clipboardItem.getType(type);
-          this.previewTarget.src = URL.createObjectURL(blob);
-
-
+          this.fileTarget.src = URL.createObjectURL(blob);
+          this.previewTarget.innerHTML = `<img src='${this.fileTarget.src}' >`
           let list = new DataTransfer();
           let file = new File([blob], new Date().toISOString());
           list.items.add(file);
-          this.previewTarget.files = list.files;
+          this.fileTarget.files = list.files;
         }
         else if (type.includes('text/plain')){
           const blob = await clipboardItem.getType(type);

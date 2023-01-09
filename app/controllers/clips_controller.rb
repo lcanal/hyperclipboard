@@ -34,7 +34,7 @@ class ClipsController < ApplicationController
 
   def destroy
     @clip = Clip.find(params[:id])
-    @clip.image.purge
+    @clip.file.purge
     @clip.destroy
 
     respond_to do |format|
@@ -50,6 +50,6 @@ class ClipsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def clip_params
-    params.permit(:name, :description, :filename, :url, :type, :image)
+    params.permit(:name, :description, :filename, :url, :type, :file)
   end
 end
