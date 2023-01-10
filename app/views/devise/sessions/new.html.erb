@@ -45,40 +45,40 @@
             <div class="absolute inset-0 flex items-center" aria-hidden="true">
               <div class="w-full border-t border-gray-300"></div>
             </div>
-            <div class="relative flex justify-center text-sm">
-              <span class="bg-white px-2 text-gray-500">Or continue with</span>
-            </div>
+<!--            <div class="relative flex justify-center text-sm">-->
+<!--              <span class="bg-white px-2 text-gray-500">Or continue with</span>-->
+<!--            </div>-->
           </div>
         </div>
 
-        <div class="mt-6">
-          <%= form_for(resource, as: resource_name, url: create_user_session_path(resource_name)) do |f| %>
-            <div>
-              <%= f.label :email, class: "block text-sm font-medium text-gray-700" %>
-              <div class="mt-1">
-                <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, class: "block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" %>
-              </div>
-            </div>
+<!--        <div class="mt-6">-->
+          <%#= form_for(resource, as: resource_name, url: create_user_session_path, data: { turbo_method: "false" }) do |f| %>
+<!--            <div>-->
+              <%#= f.label :email, class: "block text-sm font-medium text-gray-700" %>
+<!--              <div class="mt-1">-->
+                <%#= f.email_field :email, autofocus: true, autocomplete: "email", required: true, class: "block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" %>
+<!--              </div>-->
+<!--            </div>-->
 
-            <div class="space-y-1">
-              <%= f.label :password, class: "block text-sm font-medium text-gray-700"%>
-              <div class="mt-1">
-                <%= f.password_field :password, autocomplete: "current-password", required: true, class: "block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" %>
-              </div>
+<!--            <div class="space-y-1">-->
+              <%#= f.label :password, class: "block text-sm font-medium text-gray-700"%>
+<!--              <div class="mt-1">-->
+                <%#= f.password_field :password, autocomplete: "current-password", required: true, class: "block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm" %>
+<!--              </div>-->
 
-            </div>
+<!--            </div>-->
 
-            <% if devise_mapping.rememberable? %>
-              <div class="field">
-                <%= f.check_box :remember_me %>
-                <%= f.label :remember_me %>
-              </div>
-            <% end %>
+            <%# if devise_mapping.rememberable? %>
+<!--              <div class="field">-->
+                <%#= f.check_box :remember_me %>
+                <%#= f.label :remember_me %>
+<!--              </div>-->
+            <%# end %>
 
-            <div class="mt-4">
-              <%= f.submit "Sign in", class: "flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
-            </div>
-          <% end %>
+<!--            <div class="mt-4">-->
+              <%#= f.submit "Sign in", class: "flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2" %>
+<!--            </div>-->
+          <%# end %>
 <!--          <form action="#" method="POST" class="space-y-6">-->
 <!--            <div>-->
 <!--              <label for="email" class="block text-sm font-medium text-gray-700">Email address</label>-->
@@ -109,7 +109,7 @@
 <!--              <button type="submit" class="flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Sign in</button>-->
 <!--            </div>-->
 <!--          </form>-->
-        </div>
+<!--        </div>-->
       </div>
     </div>
   </div>
