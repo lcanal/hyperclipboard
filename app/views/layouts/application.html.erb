@@ -11,12 +11,8 @@
   </head>
 
   <body class="h-full">
-  <div>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  </div>
-
-    <% unless current_user.nil? %>
+    <%= render 'layouts/notices' %>
+    <% if user_signed_in? %>
       <%= render 'layouts/shell'%>
     <% else %>
       <%= yield %>

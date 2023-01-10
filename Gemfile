@@ -83,11 +83,9 @@ gem "sidekiq-scheduler"
 gem "image_processing", "~> 1.12"
 
 gem "devise", "~> 4.8"
-
 gem "omniauth", "~> 2.1"
-
-gem "omniauth-twitter2", "~> 0.1.0"
-
+gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "dotenv-rails", "~> 2.8"
 
-gem "omniauth-rails_csrf_protection", "~> 1.0"
+
+gem "omniauth-twitter2", "~> 0.1.0"
