@@ -7,5 +7,8 @@ import { application } from "./application"
 import ClipboardController from "./clipboard_controller"
 application.register("clipboard", ClipboardController)
 
+import NoticeController from "./notice_controller"
+application.register("notice", NoticeController)
+
 import SlideOverController from "./slide_over_controller"
 application.register("slide-over", SlideOverController)
