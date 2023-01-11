@@ -89,3 +89,5 @@ gem "dotenv-rails", "~> 2.8"
 
 
 gem "omniauth-twitter2", "~> 0.1.0"
+
+gem "omniauth-facebook", "~> 9.0"
