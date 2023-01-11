@@ -95,4 +95,19 @@ Rails.application.configure do
   # https://github.com/libvips/ruby-vips/issues/219
   config.active_storage.variant_processor = :mini_magick
 
+  # Using env to pass hostnames
+  config.action_mailer.default_url_options = { host: ENV['HOSTNAME'] }
+
+
+  # sending settings for service
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: ENV['MAIL_HOST'],
+    port: ENV['MAIL_PORT'],
+    user_name: ENV['MAIL_USER'],
+    password: ENV['MAIL_PASS'],
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    domain: ENV['HOSTNAME']
+  }
 end

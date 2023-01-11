@@ -11,7 +11,12 @@
   </head>
 
   <body class="h-full">
-    <%= render 'layouts/shell'%>
+    <%= render 'layouts/notices' %>
+    <% if user_signed_in? %>
+      <%= render 'layouts/shell'%>
+    <% else %>
+      <%= yield %>
+    <% end %>
   </body>
 </html>
 

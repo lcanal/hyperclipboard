@@ -1,4 +1,5 @@
 class ClipsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @clips = Clip.all
   end
@@ -38,7 +39,7 @@ class ClipsController < ApplicationController
     @clip.destroy
 
     respond_to do |format|
-      format.html { redirect_to clips_url, notice: "Clip was successfully destroyed." }
+      format.html { redirect_to clips_url, notice: "Clip was successfully deleted." }
       format.json { head :no_content }
     end
   end
